@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section id="home">
+        <header>
+            <div id="container">
+                <ul>
+                    <li><a href="#home"><b>HOME</b></a></li>
+                    <li><a href="#content"><b>CONTENT</b></a>
+                        <ul>
+                            <li><a href="#heartpredict"><b>USING ML</b></a>
+                                <ul>
+                                    <li><a href="#goal"><b>GOAL</b></a></li>
+                                    <li><a href="#dataset"><b>DATASET</b></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#result"><b>RESULT</b></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#predict"><b>PREDICTION</b></a></li>
+                    <li><a href="#sign_in"><b>SIGN IN</b></a></li>
+
+                </ul>
+            </div>
+        </header>
+        <div class="content">
+            <h1>Heart Diseases Prediction</h1>
+            <img src="./images/heart 2.jpeg" alt="">
+        </div>
+    </section>
+    <section id="heartpredict"></section>
+    <section id="goal">
+        <h1>GOALS</h1>
+        <div class="goal">
+            <img src="./images/no-goal.jpg" alt="">
+            <p>
+                 The main challenge in today's healthcare is provision of best quality services and effective accurate diagnosis. Even if heart diseases are found as the prime source of death in the world in recent years, they are also the ones that can be controlled and managed effectively. The whole accuracy in management of a disease lies on the proper time of detection of that disease. Our proposed model makes an attempt to detect these heart diseases at early stage to avoid disastrous consequences.
+            </p>
+        </div>
+    </section>
+    <section id="dataset">
+        <h1>
+            DATASET DESCRIPTION
+        </h1>
+        <h2>
+            HTML TABLE
+        </h2>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>s.no</th>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Age</td>
+                    <td>Age of patient</td>
+                    <td>Numeric</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>sex</td>
+                    <td>Gender of patients</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cp</td>
+                    <td>Type of chest pain</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Trestbps</td>
+                        <td>Resting blood pressure</td>
+                        <td>Numeric</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Chol</td>
+                        <td>Cholesterol level</td>
+                        <td>Numeric</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>FBS</td>
+                        <td>Fasting Blood sugar</td>
+                        <td>Numeric</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>RestECG</td>
+                        <td>Electrocardiographic result</td>
+                        <td>Numeric</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Thalach</td>
+                        <td>The maximum heart attained by patient</td>
+                        <td>Numeric</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Exang</td>
+                        <td>Exercise induced angina</td>
+                        <td>Nominal</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Oldpeak</td>
+                        <td>ST depression induced angina</td>
+                        <td>Numeric</td>
+                    </tr>
+            </table>
+        </div>
+    </section>
+    <section id="result">
+        <div class="result">
+            <h1>RESULT</h1>
+            <P>
+                Our project focuses on analyzing and designing a system where patients’
+                real-time information can be processed and evaluated based on previous symptoms and current symptoms for different diseases.
+            </P>
+        </div>
+
+    </section>
+    <section id="predict">
+        <h1>HEART DISEASE PREDICTION</h1>
+        <div class="heart_img">
+            <img src="./images/HN.jpg" alt="">
+        </div>
+        <div class="heart_table">
+            <div class="heart_box">
+                <form action="{{ url_for('predict')}}" method="post">
+                    <pre>
+                        <label>AGE</label>
+                        <input type="number" name="age" id="age" placeholder="" required="required"/><br/>           
+                        <label>GENDER</label>
+                        <input type="text" name="gender" id="gender" placeholder="" required="required"><br/>
+                        <label>CHOLESTROL</label> 
+                        <input type="number" name="chol" id="chol" placeholder="" required="required"><br/> 
+                        <label>FASTING BLOOD SUGAR</label>
+                        <input name="fbs" id="chol" placeholder="" required="required"><br>  
+                        <label>CORONARY ARTERY CALCIUM</label>
+                        <input type="number" name="ca" placeholder="" required="required"><br>
+                        <label>OLDPEAK</label>
+                        <input type="number" name="oldpeak" placeholder="" required="required"><br>
+                        <label>THAL</label>
+                        <input type="number" name="thal" placeholder="" required="required"><br>    
+                    </pre>
+            </div>
+            <div class="heart_box">
+                <pre>
+                    <label>CHEST PAINTYPE</label>      
+                    <input type="number" name="cp" placeholder="" required="required"><br>  
+                    <label>TRESTBPS</label>  
+                    <input name="trestbps" id="trestbps" placeholder="" required="required"><br>
+                    <label>THALACH</label>  
+                    <input name="thalach" id="thalach" placeholder="" required="required"><br>  
+                    <label>EXANG</label>     
+                    <input type="number" name="exang" id="exang" placeholder="" required="required"><br>         
+                    <label>RESTECG</label>       
+                    <input type="number" name="restecg" id="ca" placeholder="" required="required"><br> 
+                    <label>SLOPE</label>       
+                   <input type="number" name="slope" id="ca" placeholder="" required="required"><br> 
+                </pre>
+            </div>
+        </div>
+        <button>
+            SUBMIT
+        </button>
+    </section>
+    <section id="sign_in">
+        <div class="card">
+            <div class="form">
+                <h3>Login</h3>
+                <div class="input-field">
+                    <i class="fa fa-envelope"></i>
+                    <input type="text" placeholder="Enter your email">
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <a href="#">Forgot password?</a>
+                <button>Login</button>
+                <p>Don't have an account?<a href="#">Signup now</a></p>
+            </div>
+            <div class="image">
+                <div class="overlay">
+                    <h3>Our heart is already filled with<br>feelings and emotions</h3>
+                    <p>So let's have a health heart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
